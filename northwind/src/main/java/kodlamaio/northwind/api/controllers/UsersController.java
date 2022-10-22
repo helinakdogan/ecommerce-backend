@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 import kodlamaio.northwind.business.abstracts.UserService;
 import kodlamaio.northwind.core.entities.User;
 import kodlamaio.northwind.core.utilities.results.ErrorDataResult;
-import kodlamaio.northwind.core.utilities.results.Result;
 
 @RestController
 @RequestMapping(value="/api/users")
@@ -33,16 +32,15 @@ public class UsersController {
 		super();
 		this.userService = userService;
 	}
-	
+	/*
 	public Result add(@RequestBody User user) {
 		return this.userService.add(user);
 	}
-	/*
+	*/
 	@PostMapping(value="/add")
 	public ResponseEntity<?> add(@Valid @RequestBody User user) {
 		return ResponseEntity.ok(this.userService.add(user));
 	}
-	
 	
 	//sistemde exception olursa bu methodu dön
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -56,5 +54,5 @@ public class UsersController {
 		ErrorDataResult<Object> errors = new ErrorDataResult<Object>(validationErrors,"Doğrulama hataları");
 		return errors;
 	}
-*/
+
 }

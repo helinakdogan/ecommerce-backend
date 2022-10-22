@@ -7,7 +7,7 @@ import kodlamaio.northwind.core.entities.User;
 
 @Repository
 public interface UserDao extends JpaRepository<User, Integer>{
-	User finByEmail(String email);
+	User findUserByEmail(String email);
 	//kullanıcı bilgilerine email ile ulaşmak için
 
 }
