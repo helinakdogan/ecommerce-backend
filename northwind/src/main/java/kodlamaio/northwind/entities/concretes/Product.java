@@ -34,7 +34,7 @@ public class Product {
 	private String productName;
 	
 	@Column(name="unit_price")
-	private double unitpPrice;
+	private double unitPrice;
 	
 	@Column(name="units_in_stock")
 	private short unitsInStock;
